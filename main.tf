@@ -15,8 +15,9 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "this" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = var.instance_type
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
   network_interface {
     network_interface_id = aws_network_interface.this.id
     device_index         = 0
