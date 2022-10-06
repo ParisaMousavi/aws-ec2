@@ -31,7 +31,7 @@ resource "aws_instance" "this" {
 
 resource "aws_network_interface" "this" {
   subnet_id       = var.subnet_id
-  security_groups = [var.security_group_ids]
+  security_groups = var.security_group_ids
   tags = merge(
     var.additional_tags,
     {
