@@ -14,3 +14,7 @@ variable "instance_type" {
 variable "security_group_ids" {
   type = list(string)
 }
+
+variable "key_name" {
+  type = string
+}
